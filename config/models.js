@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-connection: 'repositorio'
+connection: 'repositorio',
 
   /***************************************************************************
   *                                                                          *
@@ -27,6 +27,6 @@ connection: 'repositorio'
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter'
+   migrate: 'alter'
 
 };
