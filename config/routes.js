@@ -35,8 +35,8 @@ module.exports.routes = {
   '/': {
     view: 'statics/index'
   },
-  '/vistaprueba': {
-     view: 'vistaprueba'
+  '/admin': {
+     view: 'admin'
     }
 
   /***************************************************************************
