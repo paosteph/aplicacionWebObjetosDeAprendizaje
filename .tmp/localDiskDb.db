@@ -1,0 +1,223 @@
+{
+  "data": {
+    "arear": [],
+    "autor": [
+      {
+        "nombre": "Graciela",
+        "apellido": "Moreno",
+        "email": "graciela.moreno@epn.edu.ec",
+        "createdAt": "2018-01-13T19:33:54.528Z",
+        "updatedAt": "2018-01-13T19:33:54.528Z",
+        "id": 1
+      },
+      {
+        "nombre": "Ximena",
+        "apellido": "Cabrera",
+        "email": "xcabrera100@hotmail.com",
+        "createdAt": "2018-01-13T21:46:13.356Z",
+        "updatedAt": "2018-01-13T21:46:13.356Z",
+        "id": 2
+      },
+      {
+        "nombre": "Daniel",
+        "apellido": "Moreno",
+        "email": "juandmc1999@yahoo.com",
+        "createdAt": "2018-01-13T21:58:33.628Z",
+        "updatedAt": "2018-01-13T21:58:33.628Z",
+        "id": 3
+      }
+    ],
+    "objectoaprendizaje": [],
+    "palabraclave": [],
+    "tipodeusuario": [
+      {
+        "nombre": "'Administrador'",
+        "createdAt": "2018-01-13T19:31:50.554Z",
+        "updatedAt": "2018-01-13T19:31:50.554Z",
+        "id": 1
+      },
+      {
+        "nombre": "'Estudiante'",
+        "createdAt": "2018-01-13T21:59:14.993Z",
+        "updatedAt": "2018-01-13T21:59:14.993Z",
+        "id": 2
+      },
+      {
+        "nombre": "'Profesor'",
+        "createdAt": "2018-01-13T21:59:29.142Z",
+        "updatedAt": "2018-01-13T21:59:29.142Z",
+        "id": 3
+      }
+    ],
+    "autor_tipodeusuarios__tipodeusuario_autores": [],
+    "objectoaprendizaje_palabrasclaves__palabraclave_objetosdeaprendizajes": []
+  },
+  "schema": {
+    "arear": {
+      "nombre": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "autor": {
+      "nombre": {
+        "type": "string"
+      },
+      "apellido": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "objectoaprendizaje": {
+      "descripcion": {
+        "type": "string"
+      },
+      "idioma": {
+        "type": "string"
+      },
+      "nombre": {
+        "type": "string"
+      },
+      "autor": {
+        "type": "integer",
+        "model": "autor",
+        "foreignKey": true,
+        "alias": "autor"
+      },
+      "areaAprendizaje": {
+        "type": "integer",
+        "model": "arear",
+        "foreignKey": true,
+        "alias": "areaAprendizaje"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "palabraclave": {
+      "nombre": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "tipodeusuario": {
+      "nombre": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "autor_tipodeusuarios__tipodeusuario_autores": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "autor_tipoDeUsuarios": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "autor",
+        "on": "id",
+        "via": "tipodeusuario_autores"
+      },
+      "tipodeusuario_autores": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "tipodeusuario",
+        "on": "id",
+        "via": "autor_tipoDeUsuarios"
+      }
+    },
+    "objectoaprendizaje_palabrasclaves__palabraclave_objetosdeaprendizajes": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "objectoaprendizaje_palabrasClaves": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "objectoaprendizaje",
+        "on": "id",
+        "via": "palabraclave_objetosDeAprendizajes"
+      },
+      "palabraclave_objetosDeAprendizajes": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "palabraclave",
+        "on": "id",
+        "via": "objectoaprendizaje_palabrasClaves"
+      }
+    }
+  },
+  "counters": {
+    "arear": {},
+    "autor": {
+      "id": 3
+    },
+    "objectoaprendizaje": {},
+    "palabraclave": {},
+    "tipodeusuario": {
+      "id": 3
+    },
+    "autor_tipodeusuarios__tipodeusuario_autores": {},
+    "objectoaprendizaje_palabrasclaves__palabraclave_objetosdeaprendizajes": {}
+  }
+}
